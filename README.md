@@ -61,3 +61,14 @@ acabei de sacar que flertei muito com a violação de *copyright* escrevendo ess
 <br/>escrevi a biblioteca "breaking_bad.h" pra fazer a *DLC*. na verdade, nem é uma *DLC*, já que já tá disponível *in-game* (me agradeça por não cobrar por isso. eu não sou a *EA Games*.<br/>
 
 ## Modo ~~porradaria desenfreada~~ *arcade*
+caso você não tenha tempo livre pra jogar meu modo história, ~~eu estou profundamente chateado, porque eu dediquei muito do meu tempo nesse jogo~~, está tudo bem.<br/>
+<br/>no menu principal, tem uma opção pra você jogar o *game* sem as *cutscenes* textuais do modo história.<br/>
+<br/>pra que isso foi possível, eu escrevi sete bibliotecas.<br/>
+<br/>são as bibliotecas "batalha_namoX".<br/>
+<br/>cada uma delas, guarda a luta contra um dos vilões do jogo.<br/>
+<br/>escrevê-las deixou o código principal do jogo mais limpo, e permitiu que eu eliminasse alguns problemas que aconteciam quando o jogo era executado com a memória cheia, como a interpretação incorreta da *struct* que armazena o nível de *HP* dos personagens.<br/>
+
+## Minhas considerações finais
+é isso que temos pro joguinho.<br/>
+<br/>eu tentei comentar em todas as funções e bibliotecas que eu escrevi. nem parece eu codando.<br/>
+<br/>se você vir algum *bug*, quiser apoiar meu trabalho, ou quiser tirar alguma dúvida sobre algo que eu não consegui explicitar, sinta-se à vontade pra entrar em contato comigo.<br/>
