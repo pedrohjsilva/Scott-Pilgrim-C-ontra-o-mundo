@@ -20,3 +20,7 @@ ao passarmos pela nossa tela de carregamento, temos o nosso menu principal e, ne
 - jogar o modo arcade
 
 ## O modo história
+o *story mode* desse jogo é a chave principal para o desenvolvimento do projeto. me baseei nos quadrinhos do Scott Pilgrim e escrevi uma versão *nerfada* da história pra dar contexto pras batalhas em turno que ocorrem dentro desse jogo.<br/>
+<br/>como o jogo foi escrito apenas em linguagem C, a interação com imagens e vídeos é bem limitada, uma vez que depende da instalação de bibliotecas externas para o seu correto funcionamento. assim, tornar a experiência textual um pouco mais agradável era fundamental para o desenvolvimento do programa.<br/>
+<br/>inicialmente, pensei em carregar toda a parte "textual" do jogo em arquivos no formato .txt. isso manteria o código do jogo limpo e permitiria a tradução do *game* para outros idiomas, entretanto, faria comm que a exibição do texto na tela ocorresse sempre de maneira instantânea.<br/>
+<br/>ao escrever todo o layout de texto do jogo com comandos de saída, pude "controlar" o *timing* da exibição do texto durante a execução do jogo. assim, consigo trazer a sensação de que o jogo "acontece" a medida que você vai lendo.<br/>
