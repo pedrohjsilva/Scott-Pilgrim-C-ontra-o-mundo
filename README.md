@@ -68,6 +68,43 @@ caso você não tenha tempo livre pra jogar meu modo história, ~~eu estou profu
 <br/>cada uma delas, guarda a luta contra um dos vilões do jogo.<br/>
 <br/>escrevê-las deixou o código principal do jogo mais limpo, e permitiu que eu eliminasse alguns problemas que aconteciam quando o jogo era executado com a memória cheia, como a interpretação incorreta da *struct* que armazena o nível de *HP* dos personagens.<br/>
 
+## A mecânica de jogo
+não tem muito mistério. basicamente, ao escolher bater, a gente dá o dano do ataque.<br/>
+<br/>caso a máquina escolha bater, ela também nos dá o dano do ataque.<br/>
+<br/>existem três tipos de ataque e três tipos de defesa.<br/>
+<br/>cada ataque possui uma defesa que o anula<br/>
+<br/>ATAQUE 1 - DEFESA 1<br/>
+<br/>ATAQUE 2 - DEFESA 2<br/>
+<br/>ATAQUE 3 - DEFESA 3<br/>
+<br/>durante a rodada, os danos de ataque são operados e os danos são distribuídos.<br/>
+<br/>após isso a máquina verifica se há alguma defesa. caso a defesa "case" com seu ataque, quem defendeu recebe o dano de volta em forma de cura<br/>
+<br/>dessa maneira, implemantamos nossa mecânica de ataque bloqueado.<br/>
+
+## A mecânica de *next battle*
+pra fazer com que o jogo seguisse, a cada rodada era verificado se o nível de HP de ambos os oponentes era maior que 0.<br/>
+<br/>caso o jogador tenha HP negativo, exibimos nossa tela de *game over* e os créditos finais.<br/>
+<br/>caso a máquina fique com HP negativo, exibimos o nívl final de HP de ambos os oponentes e o jogo tem sequência.<br/>
+<br/>ao terminar a batalha em *game over*, e exibirmos os créditos finais, precisávamos nos certificar de que o jogo não daria sequência, seja na história ou na próxima batalha de turnos.<br/>
+<br/>pra isso, usei *morte* temos dentro de cada biblioteca de batalha uma variável do tipo inteiro chamada morte.<br/>
+<br/>ao fim  de cada partida, caso o jogador vença, ela é atualizada com um novo valor.<br/>
+<br/>pra dar sequência no jogo, testamos em um *if* se *morte* tem o valor que sinaliza vitória.<br/>
+<br/>caso sim, chamamos o "resto" do *game". caso não, encerramos de imediato.<br/>
+
+## A mecânica de *item drop* e *healing*
+Scott tem um anjo da guarda no nosso jogo.<br/>
+<br/>eu decidi implementar porque precisava criar uma instrução pra quando o jogador e a máquina "morrerem" na mesma rodada.<br/>
+<br/>como dois ataques na mesma rodada distribuem seus danos naturlmente, é possível que os dois oponentes fiquem com o nível de HP negativo.<br/>
+<br/>eu fiquei meio indeciso em relação ao que fazer nesse caso: se os dois morreram, continua o *game* ou *breaka* e volta pro menu?<br/>
+<br/>era fácil solucionar isso criando uma mecânica de *drop* de item (e tava valendo um pontinho extra no trabalho, né).<br/>
+<br/>quando os dois oponentes "morrem", o vilão *dropa* um item. esse item, é uma poção de cura.<br/>
+<br/>*voilà!* mecânica de *item drop* e de *healing* na mesma tacada.<br/><br/><br/>
+<br/>P.S.: talvez, ao jogar isso nem seja evidente, mas no *back-end* isso foi uma puta trapaça.
+<br/>nessa situação, o vilão sempre dropa o item, que sempre é uma poção de cura.
+<br/>o jogador sempre tem que apertar um botão pra "consumir a poção", mas na verdade, eu nem sequer coleto dado da ingestão da poção.
+<br/>eu só botei pra ler algo do teclado e seguir depois que o usuário tiver decidido consumir.
+<br/>e meio que é uma ditadura. o jogo diz "beba" e isso é tudo o que pode ser feito, tal qual em *Alice no país das maravilhas*
+<br/>chame isso de um *easter egg* de Lewis Carrol ~~ou um estudante universitário fazendo de tudo em seu alcance pra obter a melhor nota possível~~
+
 ## Minhas considerações finais
 é isso que temos pro joguinho.<br/>
 <br/>eu tentei comentar em todas as funções e bibliotecas que eu escrevi. nem parece eu codando.<br/>
