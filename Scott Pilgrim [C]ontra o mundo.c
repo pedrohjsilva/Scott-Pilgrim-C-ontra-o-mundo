@@ -255,7 +255,7 @@ int main ( )
     } while (volta_menu == 1);
     Sleep(5000); system("cls");
     //printf("\n\n\n\tPARABÉNS! Scott Pilgrim derrotou os sete ex-namorados malvados de Ramona Flowers"); Sleep(5000);
-    //printf("\n\tAgora, Scott e Ramona podem ficar juntos..."); Sleep(5000);
+    //printf("\n\tAgora, Scott e Ramona podem ficar juntos..."); Sleep(5000); 
     final_credits();
     break;
     }
@@ -318,6 +318,9 @@ int main ( )
     volta_menu = 0;
     } else volta_menu = 0;
     } while (volta_menu == 1);
+    Sleep(5000); system("cls");
+    //printf("\n\n\n\tPARABÉNS! Scott Pilgrim derrotou os sete ex-namorados malvados de Ramona Flowers"); Sleep(5000);
+    //printf("\n\tAgora, Scott e Ramona podem ficar juntos..."); Sleep(5000);
     final_credits();
     break;
     }
