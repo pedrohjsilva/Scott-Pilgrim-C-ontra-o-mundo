@@ -3,6 +3,10 @@
 <br/>isso aqui deu bastante trabalho pra ficar pronto, mas meu professor tinha nos proposto um outro trabalho que também era um jogo, então quando chegamos no meio do semestre, eu já imaginava que nosso próximo trabalho seria algo próximo a um RPG de batalha em turnos, e fiquei bem empolgado.<br/>
 <br/>inicialmente, nosso professor havia dito que faríamos um RPG em *turn-based strategy*, e que queria que fizéssemos pelo menos 5 batalhas de turno contra a nossa IA. foi aí que surgiu a ideia de fazer um TBS baseado nos quadrinhos do Scott Pilgrim.<br/>
 
+## Como rodar o jogo?
+caso você não entenda como isso tudo aqui nesse repositório funciona, não se preocupe.<br/>
+<br/>pra iniciar o jogo, basta baixar o arquivo *.zip* desse repositório, extrair a pasta **(lembre-se de não mover nenhum dos arquivos pra fora dela, caso contrário, as faixas de áudio podem não ser reproduzidas de maneira adequada)**, localizar o arquivo *"Scott pilgrim [C]ontra o mundo.exe"* dentro da pasta e executá-lo.
+
 ## A tela de carregamento
 a tela de carregamento desse jogo simula uma *loading screen* genérica dos jogos de *NES*. o programa foi totalmente escrito em linguagem C e, dessa forma, é carregado automaticamente assim que o iniciamos.<br/>
 <br/>para solucionar esse problema, e garantir a execução da tão nostálgica tela de carregamento, escrevi a biblioteca "loadingscreen.h".<br/>
@@ -88,7 +92,7 @@ pra fazer com que o jogo seguisse, a cada rodada era verificado se o nível de H
 <br/>pra isso, usei *morte* temos dentro de cada biblioteca de batalha uma variável do tipo inteiro chamada morte.<br/>
 <br/>ao fim  de cada partida, caso o jogador vença, ela é atualizada com um novo valor.<br/>
 <br/>pra dar sequência no jogo, testamos em um *if* se *morte* tem o valor que sinaliza vitória.<br/>
-<br/>caso sim, chamamos o "resto" do *game". caso não, encerramos de imediato.<br/>
+<br/>caso sim, chamamos o "resto" do *game*. caso não, encerramos de imediato.<br/>
 
 ## A mecânica de *item drop* e *healing*
 Scott tem um anjo da guarda no nosso jogo.<br/>
