@@ -77,11 +77,11 @@ não tem muito mistério. basicamente, ao escolher bater, a gente dá o dano do 
 <br/>caso a máquina escolha bater, ela também nos dá o dano do ataque.<br/>
 <br/>existem três tipos de ataque e três tipos de defesa.<br/>
 <br/>cada ataque possui uma defesa que o anula<br/>
-<br/>ATAQUE 1 - DEFESA 1<br/>
-<br/>ATAQUE 2 - DEFESA 2<br/>
-<br/>ATAQUE 3 - DEFESA 3<br/>
+<br/>ATAQUE 1 é anulado por DEFESA 1<br/>
+<br/>ATAQUE 2 é anulado por  DEFESA 2<br/>
+<br/>ATAQUE 3 é anulado por DEFESA 3<br/>
 <br/>durante a rodada, os danos de ataque são operados e os danos são distribuídos.<br/>
-<br/>após isso a máquina verifica se há alguma defesa. caso a defesa "case" com seu ataque, quem defendeu recebe o dano de volta em forma de cura<br/>
+<br/>após isso a máquina verifica se há alguma defesa. caso a defesa "case" com o ataque que a anula, quem defendeu recebe o dano de volta em forma de cura<br/>
 <br/>dessa maneira, implemantamos nossa mecânica de ataque bloqueado.<br/>
 
 ## A mecânica de *next battle*
@@ -96,7 +96,7 @@ pra fazer com que o jogo seguisse, a cada rodada era verificado se o nível de H
 
 ## A mecânica de *item drop* e *healing*
 Scott tem um anjo da guarda no nosso jogo.<br/>
-<br/>eu decidi implementar porque precisava criar uma instrução pra quando o jogador e a máquina "morrerem" na mesma rodada.<br/>
+<br/>eu decidi implementar porque precisava criar uma instrução pro programa pra quando o jogador e a máquina "morrerem" na mesma rodada.<br/>
 <br/>como dois ataques na mesma rodada distribuem seus danos naturlmente, é possível que os dois oponentes fiquem com o nível de HP negativo.<br/>
 <br/>eu fiquei meio indeciso em relação ao que fazer nesse caso: se os dois morreram, continua o *game* ou *breaka* e volta pro menu?<br/>
 <br/>era fácil solucionar isso criando uma mecânica de *drop* de item (e tava valendo um pontinho extra no trabalho, né).<br/>
